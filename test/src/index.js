@@ -1,3 +1,4 @@
+import { menuList, checkbox, body } from './js/variables';
 import menuItemTpl from './templates/menu-item.hbs';
 import menu from './menu.json';
 import './styles.css';
@@ -9,9 +10,7 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-const menuList = document.querySelector('.js-menu');
-const checkbox = document.querySelector('.theme-switch__toggle');
-const body = document.querySelector('body');
+
 
 
 menuList.innerHTML = menu.map(menuItemTpl).join('');
@@ -24,7 +23,7 @@ if (JSON.parse(localStorage.getItem('checked-dark-theme'))) {
 }
 
 
-checkbox.addEventListener('change', onCheckboxChenge)
+checkbox.addEventListener('change', onCheckboxChenge);
 
 function onCheckboxChenge() {
 
